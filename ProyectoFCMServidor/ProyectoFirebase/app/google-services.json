@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "372911892353",
+    "project_id": "notificacion-firebase-90606",
+    "storage_bucket": "notificacion-firebase-90606.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372911892353:android:fb3fd15a607eebd199ea80",
+        "android_client_info": {
+          "package_name": "com.example.proyectofirebasecloudmessenging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe3L5K8p8BY7xN_IWpBMTC1hhXqst3SPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

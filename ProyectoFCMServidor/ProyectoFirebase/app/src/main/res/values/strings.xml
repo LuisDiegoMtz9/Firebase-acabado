@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ProyectoFirebaseCloudMessenging</string>
+    <string name="token_fmt">Token FCM: %1$s</string>
+</resources>

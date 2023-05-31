@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor
+
+    </title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 3px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Remitente de notificaciones push</h1>
+    <form id="send-notification-form">
+        <input type="text" id="token" placeholder="Token del Dispositivo" required>
+        <input type="text" id="title" placeholder="Titulo" required>
+        <textarea id="body" rows="5" placeholder="Cuerpo" required></textarea>
+        <button type="submit">Enviar notificaciones</button>
+    </form>
+    <script>
+        document.getElementById('send-notification-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const token = document.getElementById('token').value;
+            const title = document.getElementById('title').value;
+            const body = document.getElementById('body').value;
+
+            const response = await fetch('/send-notification', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token, title, body })
+            });
+
+            if (response.status === 200) {
+                alert('Notificacione Envida Correctamente');
+            } else {
+                alert('Error al Enviar la Notificacion');
+            }
+        });
+    </script>
+</body>
+</html>
